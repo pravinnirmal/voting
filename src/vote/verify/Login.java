@@ -19,6 +19,7 @@ public class Login {
 		//System.out.println("There are total "+Contestants.forEli.length + " contestants this week");
 		System.out.println("This week contestants are:");
 		Contestants.contestantElim();
+		Votecount.vote();
 	}
 	else {
 	System.out.println("User doesnot exist. Try again");

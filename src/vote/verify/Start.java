@@ -13,9 +13,13 @@ public class Start {
 		if (choice == 1) {
 			Login.login();
 		}
-		else {
+		else if(choice == 2) {
 		Register.register();
 		
+		}
+		else {
+			System.out.println("Error!! Select proper option");
+			main(args);
 		}
 	}
 		
