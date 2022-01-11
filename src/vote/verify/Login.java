@@ -1,6 +1,5 @@
 package vote.verify;
 
-import java.util.Arrays;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -14,16 +13,21 @@ public class Login {
 		System.out.println("Enter User ID:");
 		String Userid = scan.next();
 
-		String query = "SELECT Userid FROM userregistration WHERE Userid = ?";
+		String query = "SELECT Userid FROM userregistration WHERE Userid = '" + Userid + "'";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, username, password);
-			PreparedStatement pst = con.prepareStatement(query);
-			pst.setString(1, Userid);
+			Statement pst = con.createStatement();
+
 			ResultSet result = pst.executeQuery(query);
 
-			if (result.first()) {
+			if (result.next()) {
+				System.out.println("Welcome " + Userid);
+				System.out.println("");
+				System.out.println("You have 10 votes");
+				System.out.println("This week contestants are:");
+				Contestants.contestantElim();
 				Votecount.vote();
 			} else {
 				System.out.println("User doesnot exist");

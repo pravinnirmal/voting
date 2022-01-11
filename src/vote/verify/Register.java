@@ -30,6 +30,7 @@ public class Register  {
 			stt.execute();
 			
 			System.out.println("Registration Success.");
+			Start.main(null);
 			
 			scan.close();
 			

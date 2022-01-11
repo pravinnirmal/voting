@@ -17,6 +17,7 @@ public class Votecount {
 		System.out.println("Choose the person to eliminate");
 		Scanner scan = new Scanner(System.in);
 		name = scan.nextInt();
+		
 		System.out.println("You have selected " + Contestants.forelim[name]);
 		System.out.println("");
 		System.out.println("Enter number of votes");
@@ -30,7 +31,7 @@ public class Votecount {
 		System.out.println("You have " + tCount + " votes left");
 
 		fcount += tCount;
-		while (fcount > 0 || fcount <= 10) { //
+		while (fcount >= 0 || fcount <= 10) { //
 
 			System.out.println("Choose the person to eliminate");
 			System.out.println("");
